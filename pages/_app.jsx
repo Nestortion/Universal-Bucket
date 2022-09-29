@@ -4,6 +4,7 @@ import { GlobalStyle } from '../Components/Styles/GlobalStyle'
 import { theme } from '../others/Theme'
 
 function MyApp({ Component, pageProps }) {
+  console.log(Component.getLayout)
   if (!Component.getLayout) {
     return (
       <>

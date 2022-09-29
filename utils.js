@@ -8,6 +8,14 @@ export const utils = [
     name: 'Sudoku',
   },
   {
+    id: 'crossword',
+    name: 'Crossword',
+  },
+  {
+    id: 'rockPaperScissors',
+    name: 'Rock Paper Scissors',
+  },
+  {
     id: 'musicPlayer',
     name: 'Music Player',
   },
@@ -22,13 +30,5 @@ export const utils = [
   {
     id: 'personCreator',
     name: 'Person Creator',
-  },
-  {
-    id: 'rockPaperScissors',
-    name: 'Rock Paper Scissors',
-  },
-  {
-    id: 'crossword',
-    name: 'Crossword',
   },
 ]

@@ -5,4 +5,5 @@ export const theme = {
   cardColor: '#181818',
   heading1: '60px',
   heading2: '30px',
+  border: '#F2F2F2',
 }

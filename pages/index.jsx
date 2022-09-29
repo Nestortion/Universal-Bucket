@@ -1,18 +1,13 @@
-import Link from 'next/link'
 import Header from '../Components/Header'
-import IndexLayout from '../Components/IndexLayout'
-import { HomeLayout } from '../others/Layout'
+import { HomeLayout } from '../Components/Layout'
+import CardList from '../Components/CardList'
 
 export default function Home({ utils }) {
   return (
-    <>
+    <div>
       <Header />
-      {utils.map((util) => (
-        <Link key={`${util.id}`} href={`/utils/${util.id}`}>
-          <a>{util.name}</a>
-        </Link>
-      ))}
-    </>
+      <CardList utils={utils} />
+    </div>
   )
 }
 
