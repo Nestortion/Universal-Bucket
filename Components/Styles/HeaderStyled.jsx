@@ -4,7 +4,7 @@ export const HeaderStyled = styled.div`
   font-size: ${({ theme }) => theme.heading1};
   display: flex;
   justify-content: center;
-  padding: 3rem 0;
+  padding: 2rem 0;
 
   .primary {
     color: ${({ theme }) => theme.fontSecondary};
@@ -12,14 +12,17 @@ export const HeaderStyled = styled.div`
   .secondary {
     color: ${({ theme }) => theme.fontPrimary};
   }
-  &:hover {
-    cursor: default;
 
-    .primary {
-      color: ${({ theme }) => theme.fontPrimary};
-    }
-    .secondary {
-      color: ${({ theme }) => theme.fontSecondary};
+  span {
+    &:hover {
+      cursor: default;
+
+      .primary {
+        color: ${({ theme }) => theme.fontPrimary};
+      }
+      .secondary {
+        color: ${({ theme }) => theme.fontSecondary};
+      }
     }
   }
 `

@@ -1,10 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
-
+import Header from '../../Components/Header'
+import Head from 'next/head'
 function crossword() {
   return (
     <>
-      <div>crossword</div>
+      <Head>
+        <title>Crossword</title>
+      </Head>
+      <Header headerText="Crossword" />
       <Link href="/">Go Back</Link>
     </>
   )

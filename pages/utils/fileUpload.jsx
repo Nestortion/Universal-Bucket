@@ -1,10 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
+import Header from '../../Components/Header'
 
 function fileUpload() {
   return (
     <>
-      <div>File Upload</div>
+      <Head>
+        <title>File Upload</title>
+      </Head>
+      <Header headerText="File Upload" />
       <Link href="/">Go Back</Link>
     </>
   )

@@ -29,6 +29,21 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
+    ],
+    "/utils/crossword": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/utils/crossword.js"
+    ],
+    "/utils/rockPaperScissors": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/utils/rockPaperScissors.js"
+    ],
+    "/utils/sudoku": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/utils/sudoku.js"
     ]
   },
   "ampFirstPages": []
