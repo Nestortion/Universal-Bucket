@@ -2,9 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/utils/sudoku": "pages/utils/sudoku.js",
+  "/utils/ticTacToe": "pages/utils/ticTacToe.js",
   "/api/utils": "pages/api/utils.js",
-  "/utils/crossword": "pages/utils/crossword.js",
-  "/utils/rockPaperScissors": "pages/utils/rockPaperScissors.js"
+  "/": "pages/index.js"
 }
