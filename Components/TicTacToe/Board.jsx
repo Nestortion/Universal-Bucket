@@ -1,18 +1,186 @@
+import { useState } from 'react'
 import BoardStyled from '../Styles/BoardStyled'
 import Cell from './Cell'
 
-export default function Board({ turn, setTurn, mark, setMark }) {
+export default function Board({
+  turn,
+  setTurn,
+  mark,
+  setMark,
+  setCells,
+  cells,
+  setHasWinner,
+  setScore,
+  score,
+  reset,
+  setReset,
+  hasWinner,
+}) {
+  const [isClicked, setIsClicked] = useState(true)
   return (
     <BoardStyled>
-      <Cell turn={turn} setTurn={setTurn} mark={mark} setMark={setMark} />
-      <Cell turn={turn} setTurn={setTurn} mark={mark} setMark={setMark} />
-      <Cell turn={turn} setTurn={setTurn} mark={mark} setMark={setMark} />
-      <Cell turn={turn} setTurn={setTurn} mark={mark} setMark={setMark} />
-      <Cell turn={turn} setTurn={setTurn} mark={mark} setMark={setMark} />
-      <Cell turn={turn} setTurn={setTurn} mark={mark} setMark={setMark} />
-      <Cell turn={turn} setTurn={setTurn} mark={mark} setMark={setMark} />
-      <Cell turn={turn} setTurn={setTurn} mark={mark} setMark={setMark} />
-      <Cell turn={turn} setTurn={setTurn} mark={mark} setMark={setMark} />
+      <Cell
+        turn={turn}
+        setTurn={setTurn}
+        mark={mark}
+        setMark={setMark}
+        cellNum={0}
+        setCells={setCells}
+        cells={cells}
+        reset={reset}
+        setReset={setReset}
+        score={score}
+        setScore={setScore}
+        setHasWinner={setHasWinner}
+        resetButton={true}
+        hasWinner={hasWinner}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <Cell
+        turn={turn}
+        setTurn={setTurn}
+        mark={mark}
+        setMark={setMark}
+        cellNum={0}
+        setCells={setCells}
+        cells={cells}
+        reset={reset}
+        setReset={setReset}
+        score={score}
+        setScore={setScore}
+        setHasWinner={setHasWinner}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <Cell
+        turn={turn}
+        setTurn={setTurn}
+        mark={mark}
+        setMark={setMark}
+        cellNum={1}
+        setCells={setCells}
+        cells={cells}
+        reset={reset}
+        setReset={setReset}
+        score={score}
+        setScore={setScore}
+        setHasWinner={setHasWinner}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <Cell
+        turn={turn}
+        setTurn={setTurn}
+        mark={mark}
+        setMark={setMark}
+        cellNum={2}
+        setCells={setCells}
+        cells={cells}
+        reset={reset}
+        setReset={setReset}
+        score={score}
+        setScore={setScore}
+        setHasWinner={setHasWinner}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <Cell
+        turn={turn}
+        setTurn={setTurn}
+        mark={mark}
+        setMark={setMark}
+        cellNum={3}
+        setCells={setCells}
+        cells={cells}
+        reset={reset}
+        setReset={setReset}
+        score={score}
+        setScore={setScore}
+        setHasWinner={setHasWinner}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <Cell
+        turn={turn}
+        setTurn={setTurn}
+        mark={mark}
+        setMark={setMark}
+        cellNum={4}
+        setCells={setCells}
+        cells={cells}
+        reset={reset}
+        setReset={setReset}
+        score={score}
+        setScore={setScore}
+        setHasWinner={setHasWinner}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <Cell
+        turn={turn}
+        setTurn={setTurn}
+        mark={mark}
+        setMark={setMark}
+        cellNum={5}
+        setCells={setCells}
+        cells={cells}
+        reset={reset}
+        setReset={setReset}
+        score={score}
+        setScore={setScore}
+        setHasWinner={setHasWinner}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <Cell
+        turn={turn}
+        setTurn={setTurn}
+        mark={mark}
+        setMark={setMark}
+        cellNum={6}
+        setCells={setCells}
+        cells={cells}
+        reset={reset}
+        setReset={setReset}
+        score={score}
+        setScore={setScore}
+        setHasWinner={setHasWinner}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <Cell
+        turn={turn}
+        setTurn={setTurn}
+        mark={mark}
+        setMark={setMark}
+        cellNum={7}
+        setCells={setCells}
+        cells={cells}
+        reset={reset}
+        setReset={setReset}
+        score={score}
+        setScore={setScore}
+        setHasWinner={setHasWinner}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <Cell
+        turn={turn}
+        setTurn={setTurn}
+        mark={mark}
+        setMark={setMark}
+        cellNum={8}
+        setCells={setCells}
+        cells={cells}
+        reset={reset}
+        setReset={setReset}
+        score={score}
+        setScore={setScore}
+        setHasWinner={setHasWinner}
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
     </BoardStyled>
   )
 }

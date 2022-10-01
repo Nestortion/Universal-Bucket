@@ -7,6 +7,8 @@ const BoardStyled = styled.div`
   width: 1000px;
   gap: 25px;
   justify-content: center;
+  position: relative;
+  margin-top: 3rem;
 `
 
 export default BoardStyled
