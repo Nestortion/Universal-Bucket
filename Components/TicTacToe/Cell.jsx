@@ -1,39 +1,46 @@
 import CellStyled from '../Styles/CellStyled'
 import { ImCross } from 'react-icons/im'
 import { FaRegCircle } from 'react-icons/fa'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
+import { useAtom } from 'jotai'
 import ButtonStyled from '../Styles/TicTacToeButton'
+import {
+  changeHasWinnerAtom,
+  changeIsClickedAtom,
+  changeMarkAtom,
+  changeTurnAtom,
+  updateScoreAtom,
+  resetGameAtom,
+  readIsClickedAtom,
+  readHasWinnerAtom,
+  readMarkAtom,
+  readTurnAtom,
+  readIsTieAtom,
+  changeIsTieAtom,
+} from '../../others/jotaiTicTacToe'
 
-export default function Cell({
-  turn,
-  setTurn,
-  mark,
-  setMark,
-  cellNum,
-  setCells,
-  cells,
-  setHasWinner,
-  setScore,
-  score,
-  resetButton,
-  hasWinner,
-  isClicked,
-  setIsClicked,
-}) {
+export default function Cell({ resetButton, cellNum, cells, setCells }) {
+  const [turn] = useAtom(readTurnAtom)
+  const [mark] = useAtom(readMarkAtom)
+  const [isTie] = useAtom(readIsTieAtom)
+  const [hasWinner] = useAtom(readHasWinnerAtom)
+  const [isClicked] = useAtom(readIsClickedAtom)
+
+  const [, setIsTie] = useAtom(changeIsTieAtom)
+  const [, setTurn] = useAtom(changeTurnAtom)
+  const [, setMark] = useAtom(changeMarkAtom)
+  const [, setHasWinner] = useAtom(changeHasWinnerAtom)
+  const [, setScore] = useAtom(updateScoreAtom)
+  const [, setIsClicked] = useAtom(changeIsClickedAtom)
+  const [, gameReset] = useAtom(resetGameAtom)
+
   const [cellMark, setCellMark] = useState(<ImCross />)
   const [isCellClicked, setIsCellClicked] = useState(isClicked)
 
-  // const ref = useRef(null)
-
-  // const cellDiv = ref
-
-  // useEffect(() => {
-  //   setIsClicked(true)
-  //   setCellMark(<ImCross />)
-  //   cellDiv.current.classList.add('hover')
-  //   cellDiv.current.classList.remove('isClicked')
-  //   cellDiv.current.classList.remove('cell-marked')
-  // }, [reset])
+  function tie() {
+    cells.every((element) => element.includes('x') || element.includes('o'))
+    setIsTie()
+  }
 
   function clickHandle(e) {
     e.preventDefault()
@@ -59,14 +66,20 @@ export default function Cell({
 
     setCells(currentCells)
     checkWinner(cells)
+    tie()
+  }
+
+  function tie() {
+    if (
+      cells.every((element) => element.includes('x') || element.includes('o'))
+    ) {
+      setIsTie()
+    }
   }
 
   function resetGameState() {
     setCells([[1], [2], [3], [4], [5], [6], [7], [8], [9]])
-    setMark(<ImCross />)
-    setTurn(true)
-    setHasWinner(false)
-    setIsClicked(true)
+    gameReset()
   }
 
   function resetHandle(e) {
@@ -82,7 +95,6 @@ export default function Cell({
         })
       }
     })
-    setIsClicked(true)
   }
 
   function checkWinner(cells) {
@@ -107,17 +119,9 @@ export default function Cell({
         cells[combination[0]][1] === cells[combination[1]][1] &&
         cells[combination[1]][1] === cells[combination[2]][1]
       ) {
-        setHasWinner(true)
-
-        let gameScore = score
-
-        if (turn) {
-          gameScore.x++
-        } else {
-          gameScore.o++
-        }
-        setScore(gameScore)
-        setIsClicked(false)
+        setHasWinner()
+        setScore()
+        setIsClicked()
       }
     })
   }
@@ -133,8 +137,8 @@ export default function Cell({
     )
   } else {
     return (
-      hasWinner && (
-        <ButtonStyled onClick={resetHandle}> Play Again</ButtonStyled>
+      (hasWinner || isTie) && (
+        <ButtonStyled onClick={resetHandle}>Play Again</ButtonStyled>
       )
     )
   }

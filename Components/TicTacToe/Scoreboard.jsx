@@ -1,10 +1,11 @@
-import { useState } from 'react'
 import { FaRegCircle } from 'react-icons/fa'
 import { ImCross } from 'react-icons/im'
 import ScoreBoardStyled from '../Styles/ScoreBoardStyled'
+import { readScoreAtom } from '../../others/jotaiTicTacToe'
+import { useAtom } from 'jotai'
 
-export default function Scoreboard({ score }) {
-  const [currentScore] = useState(score)
+export default function Scoreboard() {
+  const [score] = useAtom(readScoreAtom)
   return (
     <ScoreBoardStyled>
       <div className="Header">Scoreboard</div>
