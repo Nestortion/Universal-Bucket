@@ -6,10 +6,22 @@ const turnAtom = atom(true)
 const markAtom = atom(<ImCross />)
 const scoreAtom = atom({ x: 0, o: 0 })
 const hasWinnerAtom = atom(false)
-// const cellsAtom = atom([[1], [2], [3], [4], [5], [6], [7], [8], [9]])
+const cellsAtom = atom([[1], [2], [3], [4], [5], [6], [7], [8], [9]])
 const IsClickedAtom = atom(true)
 
 const isTieAtom = atom(false)
+
+const changeCellsAtom = atom(null, (get, set, val) => {
+  set(cellsAtom, setCells(get(cellsAtom), get(turnAtom), val))
+})
+
+function setCells(cells, turn, cellNum) {
+  let newCells = cells
+
+  newCells[cellNum] = [...newCells[cellNum], turn ? 'x' : 'o']
+
+  return newCells
+}
 
 const changeIsTieAtom = atom(null, (get, set) => {
   set(isTieAtom, true)
@@ -48,6 +60,7 @@ const changeIsClickedAtom = atom(null, (get, set) => {
   set(IsClickedAtom, !get(IsClickedAtom))
 })
 
+const readCellsAtom = atom((get) => get(cellsAtom))
 const readIsTieAtom = atom((get) => get(isTieAtom))
 const readMarkAtom = atom((get) => get(markAtom))
 const readTurnAtom = atom((get) => get(turnAtom))
@@ -55,22 +68,13 @@ const readIsClickedAtom = atom((get) => get(IsClickedAtom))
 const readHasWinnerAtom = atom((get) => get(hasWinnerAtom))
 const readScoreAtom = atom((get) => get(scoreAtom))
 
-// const updateCellsAtom = atom(null, (get, set) => {
-//   set(cellsAtom, setCells(get(cellsAtom)))
-// })
-
-// function setCells(cells) {
-//   let currentCells = cells
-
-//   currentCells[cellNum] = [...currentCells[cellNum], turn ? 'x' : 'o']
-//   return currentCells
-// }
 const resetGameAtom = atom(null, (get, set) => {
   set(turnAtom, true)
   set(markAtom, <ImCross />)
   set(hasWinnerAtom, false)
   set(IsClickedAtom, true)
   set(isTieAtom, false)
+  set(cellsAtom, [[1], [2], [3], [4], [5], [6], [7], [8], [9]])
 })
 
 export {
@@ -94,4 +98,7 @@ export {
   isTieAtom,
   readIsTieAtom,
   changeIsTieAtom,
+  cellsAtom,
+  changeCellsAtom,
+  readCellsAtom,
 }

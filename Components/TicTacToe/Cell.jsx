@@ -17,15 +17,19 @@ import {
   readTurnAtom,
   readIsTieAtom,
   changeIsTieAtom,
+  changeCellsAtom,
+  readCellsAtom,
 } from '../../others/jotaiTicTacToe'
 
-export default function Cell({ resetButton, cellNum, cells, setCells }) {
+export default function Cell({ resetButton, cellNum }) {
   const [turn] = useAtom(readTurnAtom)
   const [mark] = useAtom(readMarkAtom)
   const [isTie] = useAtom(readIsTieAtom)
   const [hasWinner] = useAtom(readHasWinnerAtom)
   const [isClicked] = useAtom(readIsClickedAtom)
+  const [cells] = useAtom(readCellsAtom)
 
+  const [, setCells] = useAtom(changeCellsAtom)
   const [, setIsTie] = useAtom(changeIsTieAtom)
   const [, setTurn] = useAtom(changeTurnAtom)
   const [, setMark] = useAtom(changeMarkAtom)
@@ -37,8 +41,11 @@ export default function Cell({ resetButton, cellNum, cells, setCells }) {
   const [cellMark, setCellMark] = useState(<ImCross />)
 
   function tie() {
-    cells.every((element) => element.includes('x') || element.includes('o'))
-    setIsTie()
+    if (
+      cells.every((element) => element.includes('x') || element.includes('o'))
+    ) {
+      setIsTie()
+    }
   }
 
   function clickHandle(e) {
@@ -57,25 +64,15 @@ export default function Cell({ resetButton, cellNum, cells, setCells }) {
     e.currentTarget.classList.remove('hover')
     e.currentTarget.classList.add('cell-marked')
 
-    let currentCells = cells
+    setCells(cellNum)
 
-    currentCells[cellNum] = [...currentCells[cellNum], turn ? 'x' : 'o']
+    console.log(cells)
 
-    setCells(currentCells)
     checkWinner(cells)
     tie()
   }
 
-  function tie() {
-    if (
-      cells.every((element) => element.includes('x') || element.includes('o'))
-    ) {
-      setIsTie()
-    }
-  }
-
   function resetGameState() {
-    setCells([[1], [2], [3], [4], [5], [6], [7], [8], [9]])
     gameReset()
   }
 

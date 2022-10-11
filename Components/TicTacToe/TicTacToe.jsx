@@ -18,17 +18,6 @@ function TicTacToe() {
   const [turn] = useAtom(turnAtom)
   const [hasWinner] = useAtom(hasWinnerAtom)
   const [, setScore] = useAtom(resetScoreAtom)
-  const [cells, setCells] = useState([
-    [1],
-    [2],
-    [3],
-    [4],
-    [5],
-    [6],
-    [7],
-    [8],
-    [9],
-  ])
 
   // const [turn, setTurn] = useState(true)
   // const [mark, setMark] = useState(<ImCross />)
@@ -61,7 +50,7 @@ function TicTacToe() {
   return (
     <ContentContainerStyled>
       <Scoreboard />
-      <Board cells={cells} setCells={setCells} />
+      <Board />
       <ResetButton onClick={handleClick}>Reset Scoreboard</ResetButton>
       {hasWinner && <Winner winner={turn ? 'O' : 'X'} />}
       {isTie && !hasWinner && <Tie />}
