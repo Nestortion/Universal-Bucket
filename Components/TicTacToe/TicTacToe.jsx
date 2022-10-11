@@ -11,12 +11,10 @@ import {
   hasWinnerAtom,
   resetScoreAtom,
   isTieAtom,
-  changeIsTieAtom,
 } from '../../others/jotaiTicTacToe'
 
 function TicTacToe() {
   const [isTie] = useAtom(isTieAtom)
-  const [, setIsTie] = useAtom(changeIsTieAtom)
   const [turn] = useAtom(turnAtom)
   const [hasWinner] = useAtom(hasWinnerAtom)
   const [, setScore] = useAtom(resetScoreAtom)

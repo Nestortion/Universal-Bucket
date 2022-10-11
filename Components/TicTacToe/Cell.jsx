@@ -35,7 +35,6 @@ export default function Cell({ resetButton, cellNum, cells, setCells }) {
   const [, gameReset] = useAtom(resetGameAtom)
 
   const [cellMark, setCellMark] = useState(<ImCross />)
-  const [isCellClicked, setIsCellClicked] = useState(isClicked)
 
   function tie() {
     cells.every((element) => element.includes('x') || element.includes('o'))
@@ -53,11 +52,9 @@ export default function Cell({ resetButton, cellNum, cells, setCells }) {
       setCellMark(<FaRegCircle />)
       setMark(<ImCross />)
     }
-    if (isCellClicked) {
-      e.currentTarget.classList.add('isClicked')
-      e.currentTarget.classList.remove('hover')
-      setIsCellClicked(false)
-    }
+
+    e.currentTarget.classList.add('isClicked')
+    e.currentTarget.classList.remove('hover')
     e.currentTarget.classList.add('cell-marked')
 
     let currentCells = cells
