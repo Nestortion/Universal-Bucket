@@ -25,7 +25,10 @@ function Header({ headerText }) {
             content.map((word) => {
               color = !color
               return (
-                <strong className={color ? 'primary' : 'secondary'}>
+                <strong
+                  key={word.toString()}
+                  className={color ? 'primary' : 'secondary'}
+                >
                   {word}&nbsp;
                 </strong>
               )
