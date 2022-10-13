@@ -122,7 +122,10 @@ export default function Cell({ resetButton, cellNum }) {
 
   if (!resetButton) {
     return (
-      <CellStyled>
+      <CellStyled
+        cellType="tictactoe"
+        size={{ width: '300px', height: '300px' }}
+      >
         <div className="mark hover" onClick={isClicked ? clickHandle : null}>
           {cellMark}
           {mark}

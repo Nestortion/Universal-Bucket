@@ -19,30 +19,6 @@ function TicTacToe() {
   const [hasWinner] = useAtom(hasWinnerAtom)
   const [, setScore] = useAtom(resetScoreAtom)
 
-  // const [turn, setTurn] = useState(true)
-  // const [mark, setMark] = useState(<ImCross />)
-  // const [score, setScore] = useState({ x: 0, o: 0 })
-  // const [hasWinner, setHasWinner] = useState(false)
-  // const [reset, setReset] = useState(false)
-  // const [cells, setCells] = useState([
-  //   [1],
-  //   [2],
-  //   [3],
-  //   [4],
-  //   [5],
-  //   [6],
-  //   [7],
-  //   [8],
-  //   [9],
-  // ])
-
-  // useEffect(() => {
-  //   setCells([[1], [2], [3], [4], [5], [6], [7], [8], [9]])
-  //   setTurn(true)
-  //   setMark(<ImCross />)
-  //   setHasWinner(false)
-  // }, [reset])
-
   function handleClick(e) {
     setScore()
   }

@@ -1,14 +1,16 @@
-import styled, { ThemeContext } from 'styled-components'
+import styled from 'styled-components'
 
 const CellStyled = styled.div`
-  height: 300px;
-  width: 300px;
+  height: ${({ size }) => size.height};
+  width: ${({ size }) => size.width};
   border: 1px solid ${({ theme }) => theme.fontSecondary};
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .mark {
+  ${({ cellType }) => {
+    if (cellType === 'tictactoe') {
+      return `.mark {
     height: 100%;
     width: 100%;
     font-size: 275px;
@@ -47,7 +49,9 @@ const CellStyled = styled.div`
     &:hover {
       cursor: not-allowed;
     }
-  }
+  }`
+    }
+  }}
 `
 
 export default CellStyled

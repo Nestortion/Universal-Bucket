@@ -3,9 +3,8 @@ import styled from 'styled-components'
 const BoardStyled = styled.div`
   display: flex;
   flex-wrap: wrap;
-  height: 1000px;
-  width: 1000px;
-  gap: 25px;
+  max-width: ${({ size }) => size.width};
+  gap: ${({ size }) => (size.gap ? size.gap : 0)};
   justify-content: center;
   position: relative;
   margin-top: 3rem;

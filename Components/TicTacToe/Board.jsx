@@ -1,9 +1,9 @@
-import BoardStyled from '../Styles/BoardStyled'
+import BoardStyled from '../Styles/BoardStyled.jsx'
 import Cell from './Cell'
 
-export default function Board({ cells, setCells }) {
+export default function Board() {
   return (
-    <BoardStyled>
+    <BoardStyled size={{ width: '1000px', gap: '25px' }}>
       <Cell resetButton={true} />
       <Cell cellNum={0} />
       <Cell cellNum={1} />
