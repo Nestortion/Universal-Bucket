@@ -1,9 +1,0 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/utils/ticTacToe": "pages/utils/ticTacToe.js",
-  "/": "pages/index.js",
-  "/api/utils": "pages/api/utils.js",
-  "/utils/sudoku": "pages/utils/sudoku.js"
-}
