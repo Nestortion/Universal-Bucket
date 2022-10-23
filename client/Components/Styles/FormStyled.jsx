@@ -19,6 +19,7 @@ const FormStyled = styled.div`
     background-color: ${({ theme }) => theme.buttonColor};
     color: ${({ theme }) => theme.fontPrimary};
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     &:hover {
       cursor: pointer;
@@ -35,13 +36,20 @@ const FormStyled = styled.div`
     }
 =======
 >>>>>>> 54b379cd3144ac6cdc7430ff726f32ac68176cbc
+=======
+>>>>>>> 54b379cd3144ac6cdc7430ff726f32ac68176cbc
   }
 
   .upload {
     width: 100px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     height: 25px;
     font-size: 12px;
+=======
+    height: 20px;
+    font-size: 10px;
+>>>>>>> 54b379cd3144ac6cdc7430ff726f32ac68176cbc
 =======
     height: 20px;
     font-size: 10px;
@@ -65,7 +73,11 @@ const FormStyled = styled.div`
     flex-direction: column;
     align-items: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
     gap: 1rem;
+=======
+    gap: 0.5rem;
+>>>>>>> 54b379cd3144ac6cdc7430ff726f32ac68176cbc
 =======
     gap: 0.5rem;
 >>>>>>> 54b379cd3144ac6cdc7430ff726f32ac68176cbc
@@ -94,10 +106,15 @@ const FormStyled = styled.div`
       align-items: center;
       & > input[type='text'] {
 <<<<<<< HEAD
+<<<<<<< HEAD
         text-align: center;
         width: 300px;
         height: 32px;
         font-size: 20px;
+=======
+        width: 300px;
+        height: 32px;
+>>>>>>> 54b379cd3144ac6cdc7430ff726f32ac68176cbc
 =======
         width: 300px;
         height: 32px;
